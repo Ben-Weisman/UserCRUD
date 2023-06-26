@@ -1,0 +1,35 @@
+﻿@model List<UserCRUD.Models.domain.User>
+
+
+@{
+}
+
+<h1>Users List</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Id</th>
+            <th>Date Of Birth</th>
+            <th>Gender</th>
+            <th>Phone</th>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Name</td>
+                <td>@user.Email</td>
+                <td>@user.Id</td>
+                <td>@user.DateOfBirth.ToString("dd-MM-yyyy")</td>
+                <td>@user.Gender.ToString()</td>
+                <td>@user.Phone</td>
+                <td><a href="User/ViewUser/@user.InternalID">View</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

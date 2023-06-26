@@ -1,0 +1,45 @@
+﻿
+@using UserCRUD.Models
+@model UserCRUD.Models.AddUserViewModel
+@{
+}
+
+<h1>Add User</h1>
+<form method="post" action="Add" class="mt-5">
+    <div class="mb-3">
+        <label for="" class="form-label">Name</label>
+        <input type="text" class="form-control" asp-for="Name" required>
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">Email</label>
+        <input type="email" class="form-control" asp-for="Email" Optional>
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">ID</label>
+        <input type="number" class="form-control" asp-for="Id" required>
+        <span asp-validation-for="Id" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">Date Of Birth</label>
+        <input type="date" class="form-control" asp-for="DateOfBirth" required>
+        <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">Phone</label>
+        <input type="number" class="form-control" asp-for="Phone">
+        <span asp-validation-for="Phone" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Gender" class="form-label">Gender</label>
+        <select asp-for="Gender" class="form-control" asp-items="Html.GetEnumSelectList<GenderEnum>()"></select>
+    </div>
+
+   
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

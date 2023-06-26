@@ -1,0 +1,48 @@
+﻿@using UserCRUD.Models
+@model UserCRUD.Models.UpdateUserViewModel
+
+@{
+}
+
+<h1>Edit User</h1>
+<form method="post" action="ViewUser" class="mt-5">
+
+    <div class="mb-3">
+    <label for="" class="form-label">System ID</label>
+    <input type="text" class="form-control" asp-for="InternalID" readonly>
+    </div>
+    
+    <div class="mb-3">
+        <label for="" class="form-label">Name</label>
+        <input type="text" class="form-control" asp-for="Name" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">Email</label>
+        <input type="email" class="form-control" asp-for="Email">
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">User ID</label>
+        <input type="text" class="form-control" asp-for="Id">
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">Date Of Birth</label>
+        <input type="date" class="form-control" asp-for="DateOfBirth" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">Phone</label>
+        <input type="text" class="form-control" asp-for="Phone">
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Gender" class="form-label">Gender</label>
+        <select asp-for="Gender" class="form-control" asp-items="Html.GetEnumSelectList<GenderEnum>()"></select>
+    </div>
+
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-danger" asp-action="DeleteUser" asp-controller="User">Delete</button>
+</form>
